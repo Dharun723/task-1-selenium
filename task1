@@ -1,0 +1,51 @@
+*  WebDriver driver = new ChromeDriver();
+      driver.get("https://jqueryui.com/datepicker/");
+      driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+      driver.manage().window().maximize();
+      driver.switchTo().frame(0);
+     //driver.findElement(By.xpath("//iframe[@class='demo-frame']")).click();
+      driver.findElement(By.xpath("//input[@id='datepicker']")).click();
+     driver.findElement(By.xpath("//span[@class='ui-icon ui-icon-circle-triangle-e']")).click();
+     WebElement string1= driver.findElement(By.xpath("//a[normalize-space()='22']"));
+     string1.click();
+     string1.getText();
+    driver.quit();
+     
+	   //Chrome
+	 WebDriver driver = new ChromeDriver();
+	 driver.get("https://jqueryui.com/droppable/");
+     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+     driver.manage().window().maximize();
+     driver.switchTo().frame(0);
+   WebElement drag=  driver.findElement(By.xpath("//p[normalize-space()='Drag me to my target']"));
+   WebElement drop= driver.findElement(By.xpath(" //div[@id='droppable']")) ;
+   Actions action = new Actions(driver);
+   action.dragAndDrop(drag,drop).perform();
+   driver.quit();
+   
+   //Firefox
+   WebDriver driver1 = new FirefoxDriver();
+   driver1.get("https://jqueryui.com/droppable/");
+   driver1.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+   driver1.manage().window().maximize();
+   driver1.switchTo().frame(0);
+ WebElement drag1=  driver1.findElement(By.xpath("//p[normalize-space()='Drag me to my target']"));
+ WebElement drop2= driver1.findElement(By.xpath(" //div[@id='droppable']")) ;
+ Actions action1 = new Actions(driver1);
+ action1.dragAndDrop(drag1,drop2).perform();
+ driver1.quit();
+ 
+ //Edge
+ WebDriver driver2 = new EdgeDriver();
+driver2.get("https://jqueryui.com/droppable/");
+ driver2.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+ driver2.manage().window().maximize();
+ driver2.switchTo().frame(0);
+WebElement drag2=  driver2.findElement(By.xpath("//p[normalize-space()='Drag me to my target']"));
+WebElement drop3= driver2.findElement(By.xpath(" //div[@id='droppable']")) ;
+Actions action3 = new Actions(driver2);
+action3.dragAndDrop(drag2,drop3).perform();
+driver2.quit();
+   }
+
+}
